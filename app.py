@@ -13,7 +13,7 @@ from datetime import datetime as dt
 import json
 import pandas as pd
 
-from flask import flask
+from flask import Flask
 server = Flask('my app')
 
 
