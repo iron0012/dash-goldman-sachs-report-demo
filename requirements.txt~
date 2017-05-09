@@ -2,7 +2,7 @@ click==6.7
 colorlover==0.2.1
 dash-core-components==0.3.5
 dash-html-components==0.4.1
-dash-renderer==0.6.1
+dash-renderer==0.6.0
 dash.ly==0.15.2
 decorator==4.0.11
 finsymbols==1.1.1
