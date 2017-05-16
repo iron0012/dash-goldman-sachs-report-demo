@@ -1,0 +1,8 @@
+plotly==2.0.8
+pandas==0.19.2
+pandas-datareader==0.3.0.post0
+dash.ly==0.15.2
+dash-renderer==0.6.1
+dash-html-components==0.4.1
+dash-core-components==0.3.5
+
