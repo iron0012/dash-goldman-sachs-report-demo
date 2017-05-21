@@ -642,49 +642,6 @@ app.layout = html.Div([
             ], className = "subpage"),
         ], className = "page"),
 
-        html.Div([
-            html.Div([
-                html.Div([
-                    #html.Br([]),
-                    html.H6("US shale growth not required until 2017"),
-                    html.P("Under our updated oil supply and demand forecast, we believe the market only requires \
-                            US production growth in 2017 (of 300 kb/d), and as a result maintain our 2017 $60/bbl WTI \
-                            price forecast, with prices trading by then above our US shale $55/bbl breakeven forecast. \
-                            Our longer-term forecast is unchanged as well with continued productivity gains bringing \
-                            these numbers lower by $10/bbl by 2020 4 ..", style={"padding-bottom": "5px"}),
-                    html.P("Although our 2017 WTI forecast now sits above the forward curve given the recent sell off, \
-                            we would not interpret that as a signal to buy long-dated oil. Historically, once the storage \
-                            arbitrage that connects spot to forward prices is no longer needed, bear markets typically \
-                            end with a sharp sell-off in long-dated prices that creates a shift in producer and investor \
-                            behavior.", style={"padding-bottom": "5px"}),
-                    html.P("A sharper decline in US production than we expect or a more limited increase in OPEC \
-                            production could require an earlier recovery in US production. However we see several \
-                            potential catalysts for an even later required increase in US production such as weaker \
-                            global demand and more resilient non-OPEC ex. US production (as long as storage \
-                            capacity isn\'t breached). Further, the consequence of this New Oil Order is that any \
-                            sustainable price rally can quickly impact forward fundamentals. This spring\'s rally did \
-                            prove to be self-defeating as reopened capital markets lead to producers redeploying rigs \
-                            (Exhibit 17) 5 . This reinforces our conviction that sustainability low spot and forward prices \
-                            are required until there is greater confidence that US shale growth is indeed required.", style={"padding-bottom": "15px"}),
-                    html.Div([
-                        html.Div([
-                            html.Strong("Exhibit 17: US producers ramped up activity once funding markets reopened"),
-                            html.P("Energy share of HY US debt issuance (rhs), monthly change in the US oil rig count (lhs)"),
-                        ], className="title twelve columns"),
-                        html.Iframe(src="https://plot.ly/~alishobeiri/592.embed?modebar=false&link=false&autosize=true",
-                                    className="exhibit twelve columns", style={'padding-right':'150px'}, seamless="seamless", height="200"),
-                    ], className="twelve columns", style={'margin-right':'50px'}),
-                    html.Div([
-                    html.H6("A later and shallow recover", style={"padding-bottom": "5px"}),
-                    html.P("While we forecast that the supply and demand for the barrels of oil will likely find a balance \
-                            by the end of 2016, this doesn\'t mean a sharp rebound in prices will occur quickly as many", style={"padding-bottom": "5px"}),
-                    ], className="written-text"),
-                ], className = "written-text no-header eight columns"),
-            ], className = "subpage"),
-        ], className = "page"),
-
-
-
 ])
 
 external_css = ["https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
