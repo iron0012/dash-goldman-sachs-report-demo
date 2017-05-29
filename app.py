@@ -225,11 +225,11 @@ app.layout = html.Div([
                 html.Div([
                         html.Div([
                             html.Strong("Exhibit 1: The global oil market is oversupplied as production remains 3.0 mb/d higher than last year"),
-                            html.P("Year over year growth, million barrels per day"),
+                            html.P("Year over year growth, million barrels per day", style={"font-size": "11"}),
                         ], className="title six columns"),
                         html.Div([
                             html.Strong("Exhibit 2: High frequency stocks point to a counter-seasonally large build in July-August"),
-                            html.P("Weekly stocks (US, Japan, Singapore, ARA). Crude only for US & Singapore. Month-on-month change (kb/d) vs. seasonal"),
+                            html.P("Weekly stocks (US, Japan, Singapore, ARA). Crude only for US & Singapore. Month-on-month change (kb/d) vs. seasonal", style={"font-size": "11"}),
                         ], className="title six columns"),
                     ], className="thirdPage first row", style={'position': 'relative', 'top': '20px'}),
                 html.Div([
@@ -257,13 +257,13 @@ app.layout = html.Div([
                             html.Strong("Exhibit 3: Our VAR analysis shows that demand \
                                          responses occur within 9 to12 months..."),
                             html.P("Estimated oil demand response (in %) to +1% shock to prices \
-                                    or industrial production"),
+                                    or industrial production", style={"font-size": "11"}),
                         ], className="title six columns"),
                         html.Div([
                             html.Strong("Exhibit 4: ... with potentially weaker global growth a key \
                                         downside risk to 2016 demand"),
                             html.P("2016 vs. 2015 global oil demand growth sensitivity (kb/d). \
-                                    2015 Brent prices assumed at $54/bbl"),
+                                    2015 Brent prices assumed at $54/bbl", style={"font-size": "11"}),
                         ], className="title six columns"),
                     ], className="thirdPage first row"),
                 html.Div([
@@ -315,12 +315,12 @@ app.layout = html.Div([
                                 html.Div([
                                     html.Strong("Exhibit 5: We continue to expect that the global oil \
                                                 market will remain in surplus until 4Q16..."),
-                                    html.P("Global supply minus demand (mb/d)"),
+                                    html.P("Global supply minus demand (mb/d)", style={"font-size": "11"}),
                                 ], className="title six columns"),
                                 html.Div([
                                     html.Strong("Exhibit 6: ... with OECD ex. US NGL stocks building more \
                                                 than the seasonal average over the next 4 quarters"),
-                                    html.P("Thousand barrels per day"),
+                                    html.P("Thousand barrels per day", style={"font-size": "11"}),
                                 ], className="title six columns"),
                             ], className="thirdPage first row"),
                     html.Div([
@@ -358,12 +358,12 @@ app.layout = html.Div([
                         html.Div([
                                 html.Div([
                                     html.Strong("Exhibit 7: We lower our 2015-16 oil price forecasts..."),
-                                    html.P("$/bbl"),
+                                    html.P("$/bbl", style={"font-size": "11"}),
                                 ], className="title six columns"),
                                 html.Div([
                                     html.Strong("Exhibit 8: ... and expect prices to remain below current \
                                     forwards until 2017"),
-                                    html.P("$/bbl"),
+                                    html.P("$/bbl", style={"font-size": "11"}),
                                 ], className="title six columns"),
                             ], className="thirdPage first row", style={"margin-top": "100px"}),
                     html.Div([
@@ -424,14 +424,14 @@ app.layout = html.Div([
                                 html.Div([
                                     html.Strong("Exhibit 9: Rebalancing depends now more on IG behavior \
                                                 given 3x more production than HY"),
-                                    html.P("Total US E&P production by credit rating category"),
+                                    html.P("Total US E&P production by credit rating category", style={"font-size": "11"}),
                                 ], className="title six columns"),
                                 html.Div([
                                     html.Strong("Exhibit 10: Financial stress on producers needs to remain \
                                                 elevated to force US production declines"),
                                     html.P("EPX equity sector (indexed to 90 as or Sep-14, lhs); WTI 2-\
                                             year swap ($/bbl, lhs); HY Energy spread as a ratio to HY \
-                                            Index spread (rhs, inverted)"),
+                                            Index spread (rhs, inverted)", style={"font-size": "11"}),
                                 ], className="title six columns"),
                             ], className="thirdPage first row", style={"margin-top": "100px"}),
                     html.Div([
@@ -496,12 +496,12 @@ app.layout = html.Div([
                         html.Div([
                             html.Strong("Exhibit 11: We estimate that remaining identifiable \
                                         storage capacity is 375 million barrels outside of China..."),
-                            html.P("Million barrels"),
+                            html.P("Million barrels", style={"font-size": "11"}),
                         ], className="title six columns"),
                         html.Div([
                             html.Strong("Exhibit 12: ... with our projected OECD vs. non-OECD ex. \
                                         China stock build through 2016 of 240 million barrels"),
-                            html.P("Quarterly changes in stock (thousand barrels per day)"),
+                            html.P("Quarterly changes in stock (thousand barrels per day)", style={"font-size": "11"}),
                         ], className="title six columns"),
                     ], className="thirdPage first row", style={'position': 'relative', 'top': '20px'}),
                 html.Div([
@@ -543,12 +543,12 @@ app.layout = html.Div([
                         html.Div([
                             html.Strong("Exhibit 13: We believe that most of the miscellaneous to \
                                         balance represents non-OECD stock builds, like in 1998"),
-                            html.P("Quarterly stock changes, thousand barrels per day"),
+                            html.P("Quarterly stock changes, thousand barrels per day", style={"font-size": "11"}),
                         ], className="title six columns"),
                         html.Div([
                             html.Strong("Exhibit 14: Operational stress ultimately brings spot and \
                                         forward prices down to cash costs"),
-                            html.P("2015 $/bbl"),
+                            html.P("2015 $/bbl", style={"font-size": "11"}),
                         ], className="title six columns"),
                     ], className="thirdPage first row", style={'position': 'relative', 'top': '20px'}),
                 html.Div([
@@ -566,11 +566,11 @@ app.layout = html.Div([
                 html.Div([
                         html.Div([
                             html.Strong("Exhibit 15: The highest cash costs are near $30/bbl..."),
-                            html.P("Oil cash cost (in Brent equivalent $/bbl)"),
+                            html.P("Oil cash cost (in Brent equivalent $/bbl)", style={"font-size": "11"}),
                         ], className="title six columns"),
                         html.Div([
                             html.Strong("Exhibit 16: ... but are for low levered producers"),
-                            html.P("2015 production costs ($/bbl) vs. net debt/capital employed"),
+                            html.P("2015 production costs ($/bbl) vs. net debt/capital employed", style={"font-size": "11"}),
                         ], className="title six columns"),
                     ], className="thirdPage first row", style={'position': 'relative', 'top': '20px'}),
                 html.Div([
@@ -609,13 +609,13 @@ app.layout = html.Div([
                     html.Div([
                         html.Div([
                             html.Strong("Exhibit 17: US producers ramped up activity once funding markets reopened"),
-                            html.P("Energy share of HY US debt issuance (rhs), monthly change in the US oil rig count (lhs)"),
+                            html.P("Energy share of HY US debt issuance (rhs), monthly change in the US oil rig count (lhs)", style={"font-size": "11"}),
                         ], className="title twelve columns"),
                         html.Iframe(src="https://plot.ly/~alishobeiri/650.embed?modebar=false&link=false&autosize=true",
                                     className="exhibit twelve columns", style={'padding-right':'150px', 'position': 'relative', 'bottom': '10px'}, seamless="seamless", height="300"),
                     ], className="twelve columns", style={'margin-right':'25px'}),
                     html.Div([
-                    html.H6("A later and shallow recover", style={"padding-bottom": "5px"}),
+                    html.H6("A later and shallow recovery", style={"padding-bottom": "5px"}),
                     html.P("While we forecast that the supply and demand for the barrels of oil will likely find a balance \
                             by the end of 2016, this doesn\'t mean a sharp rebound in prices will occur quickly as many", style={"padding-bottom": "5px"}),
                     ], className="written-text"),
