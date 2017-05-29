@@ -687,7 +687,7 @@ app.layout = html.Div([
                 html.Div([
                     #html.Br([]),
                     html.Div([
-                        html.Strong("Exhibit 20: Global supply estimates (thousand barrels per day)", className="no-header"),
+                        html.Strong("Exhibit 201: Global supply estimates (thousand barrels per day)", className="no-header"),
                         html.Img(src="http://i.imgur.com/zdXONlc.png",
                                     className="exhibit", style={"padding-bottom": "10px", "margin-top": "15px", "margin-right": "0px"}, width="675"),
                     ], className="row title no-header", style={"padding-left": "0px", "margin-left": "50px", "margin-top": "35px",
