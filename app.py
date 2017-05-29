@@ -46,7 +46,7 @@ app.layout = html.Div([
                                         'position': 'absolute',
                                         'background': '#5F3890',
                                         'right': '50',
-                                        'top': '170'
+                                        'top': '165'
                                         }),
                         html.Br([]),
                         html.Br([])
@@ -461,11 +461,11 @@ app.layout = html.Div([
                             China commercial crude and product inventories increased by 40 mb with the Chinese SPR \
                             absorbing an additional 110 mb between January and July.", style={"padding-bottom": "5px"}),
                     dcc.Markdown("With increased operational stress in the system vs. six months ago, we now attach a \
-                                    substantially higher probability to this being the margin of adjustment than we did in \
-                                    January. Specifically, **we estimate that available identified storage capacity outside \
-                                    China is currently 375 mb, with our balance pointing to a 240 mb ex. China \
-                                    inventory build in between September 2015 and year-end 2016** (Exhibits 11 and \
-                                    12):"),
+                            substantially higher probability to this being the margin of adjustment than we did in \
+                            January. Specifically, **we estimate that available identified storage capacity outside \
+                            China is currently 375 mb, with our balance pointing to a 240 mb ex. China \
+                            inventory build in between September 2015 and year-end 2016** (Exhibits 11 and \
+                            12):"),
                     html.Ul([
                         html.Li("We estimate OECD available storage capacity at 220 mb as of the end of August. This \
                                 is comprised of 80 mb of crude oil storage capacity in the US\' PADDs 1, 2 and 3, based \
