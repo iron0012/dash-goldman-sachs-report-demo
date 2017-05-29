@@ -123,7 +123,7 @@ app.layout = html.Div([
                             Importantly, we view this pull back to our Fall WTI forecast of $45/bbl as warranted by \
                             weak oil fundamentals with concerns for a slowdown in EM/China activity creating \
                             additional downside risk to current prices. In fact, even before potential further deceleration \
-                            in global growth, the oil market is more oversupplied than we had forecast in May."),
+                            in global growth, the oil market is more oversupplied than we had forecast in May.", style={"padding-bottom": "5px", "padding-top": "10px"}),
                     html.P("We expect the drivers of this 2015 oversupply to persist through 2016 given: (1) further \
                             OPEC production growth as this remains the optimal strategy to raising long-term \
                             revenues in our view, (2) resilient non-OPEC ex. US production as broadly determined by \
@@ -134,7 +134,7 @@ app.layout = html.Div([
                             production, it is important to note that it also increased the stock build and \"balancing \
                             term\", leaving uncertainty around the reported decline. Our own modeling of US \
                             production - consistent with company guidance and high frequency pipeline data-points \
-                            to an only moderate 2Q vs. 4Q15 production decline of 245 kb/d."),
+                            to an only moderate 2Q vs. 4Q15 production decline of 245 kb/d.", style={"padding-bottom": "5px"}),
                     html.P("Given our updated forecast for a more oversupplied oil market in 2016, we are lowering \
                             our oil price forecast once again. As previously, we continue to view US shale as the likely \
                             near-term source of supply adjustment given both the short cycle nature of shale \
@@ -147,7 +147,7 @@ app.layout = html.Div([
                             more difficult than previously expected and that such stress is needed until evidence that \
                             US shale production growth is required. As a result, we now forecast that US Lower 48 \
                             crude and NGL production will decline by 585 kb/d in 2016 with other non-OPEC production \
-                            down 220 kb/d to end the global oil market oversupply by 4Q16."),
+                            down 220 kb/d to end the global oil market oversupply by 4Q16.", style={"padding-bottom": "5px"}),
                     html.P("It is important to emphasize that as we now believe the market requires non-OPEC \
                             production to shift from our prior expectation of modest growth to large declines in 2016, \
                             the uncertainty on how and where that adjustment will take place has increased. While \
@@ -158,7 +158,7 @@ app.layout = html.Div([
                             producers into lower production such as borrowing basis redeterminations, debt maturities \
                             and hedge coverage, are significantly less binding for IG E&Ps. This near-term adjustment \
                             mechanism is further put at risk by the deeply entrenched expectation - ours included - \
-                            that the global oil market will require shale production growth within the next couple years."),
+                            that the global oil market will require shale production growth within the next couple years.", style={"padding-bottom": "5px"}),
                     html.P("This creates the risk that a slowdown in US production takes place too late or not at all, \
                             forcing oil markets to balance elsewhere or as they have historically cleared, through a \
                             collapse to production costs once the surplus breaches logistical and storage capacity. Net, \
@@ -168,7 +168,7 @@ app.layout = html.Div([
                             at a sharply lower price with cash costs around $20/bbl Brent prices, on our estimates. \
                             While such a drop would prove transient and help to immediately rebalance the supply and \
                             demand for barrels, it would likely do little for the longer-term capital imbalance in the \
-                            market with only lower prices for longer rebalancing the capital markets for energy."),
+                            market with only lower prices for longer rebalancing the capital markets for energy.", style={"padding-bottom": "5px"}),
                 ], className = "written-text eight columns"),
             ], className = "subpage"),
         ], className = "page"),
@@ -186,26 +186,33 @@ app.layout = html.Div([
                             forecast of $45/bbl as warranted by weak oil fundamentals with concerns over a slowdown \
                             in EM/China activity creating additional downside risk to current oil prices. In fact, even \
                             before a potential further deceleration in global growth, the global oil market is more \
-                            oversupplied than we had forecast in May, still driven by excess supply (Exhibit 1) due to:"),
-                    html.Li("OPEC production has continued to rise sharply, up 1.0 mb/d yoy, with Iraq and Saudi \
-                            production setting new record highs. Non-OPEC production outside the US Lower 48 \
-                            has also surprised to the upside, with production reaching 47.3 mb/d in 2Q15 vs. our \
-                            46.9 forecast. In particular, Russia and North Sea production are currently up 235 kb/d \
-                            yoy in 1H16."),
-                    html.Li("Higher production outside of the US has more than offset a decline in the US Lower 48, \
-                            with the updated EIA measure showing production down 316 kb/d since its April peak. \
-                            Given that the EIA also increased the June stock build and its \"balancing term\", \
-                            uncertainty around the reported decline remains high. Further, this decline is likely to \
-                            have been exacerbated by a sharp rise in in the backlog of drilled, but uncompleted \
-                            wells. Our own modeling of US production - consistent with company guidance and \
-                            high frequency pipeline data-pointing to an only moderate 2Q to 4Q15 production \
-                            decline of 245 kb/d"),
-                    html.Li("While oil demand growth has been strong relative to recent years, this looks \
-                            increasingly price induced (with a cold winter helping too) as global economic growth \
-                            has in fact weakened since our last forecast revision in May. We currently estimate that \
-                            yoy oil demand growth is 1.75 mb/d YTD, with our 2015 forecast now of 1.62 mb/d vs. \
-                            1.40 mb/d previously. Our modeling suggests that prices alone have contributed to 530 \
-                            kb/d of oil demand growth this year."),
+                            oversupplied than we had forecast in May, still driven by excess supply (Exhibit 1) due to:", style={"padding-bottom": "5px"}),
+                    html.Ul([
+                            html.Li("OPEC production has continued to rise sharply, up 1.0 mb/d yoy, with Iraq and Saudi \
+                                    production setting new record highs. Non-OPEC production outside the US Lower 48 \
+                                    has also surprised to the upside, with production reaching 47.3 mb/d in 2Q15 vs. our \
+                                    46.9 forecast. In particular, Russia and North Sea production are currently up 235 kb/d \
+                                    yoy in 1H16."),
+                            html.Li("Higher production outside of the US has more than offset a decline in the US Lower 48, \
+                                    with the updated EIA measure showing production down 316 kb/d since its April peak. \
+                                    Given that the EIA also increased the June stock build and its \"balancing term\", \
+                                    uncertainty around the reported decline remains high. Further, this decline is likely to \
+                                    have been exacerbated by a sharp rise in in the backlog of drilled, but uncompleted \
+                                    wells. Our own modeling of US production - consistent with company guidance and \
+                                    high frequency pipeline data-pointing to an only moderate 2Q to 4Q15 production \
+                                    decline of 245 kb/d"),
+                            html.Li("While oil demand growth has been strong relative to recent years, this looks \
+                                    increasingly price induced (with a cold winter helping too) as global economic growth \
+                                    has in fact weakened since our last forecast revision in May. We currently estimate that \
+                                    yoy oil demand growth is 1.75 mb/d YTD, with our 2015 forecast now of 1.62 mb/d vs. \
+                                    1.40 mb/d previously. Our modeling suggests that prices alone have contributed to 530 \
+                                    kb/d of oil demand growth this year."),
+                            html.Li("Net, demand growth remains well shy of the year-to-date supply growth of 2.9 mb/d \
+                                    with only 2004 briefly posting such demand growth as China and EM kicked off the \
+                                    previous decade's commodity boom. Not only is emerging market growth slowing, but \
+                                    the benefits from lower prices are most likely behind us, as our demand impulse \
+                                    modeling shows that they typically last 9-12 months (Exhibit 3)."),
+                    ], className = "twelve columns row"),
                     html.P("We estimate that the third quarter global market imbalance will be c.1.9 mb/d vs. c.2.2 \
                             mb/d in 1H15, with weekly stock data in the US, Europe, Singapore and Japan pointing to \
                             counter-seasonally large stock builds in July-August (Exhibit 2).")
@@ -233,16 +240,18 @@ app.layout = html.Div([
                 ], className="thirdPage row"),
                 html.Div([
                     html.P("Going forward we expect this oversupply to persist until late 2016. Specifically: ",
-                            style={'padding-top': '15px'}),
-                    html.Li("We expect demand growth to sequentially weaken to 1.275 mb/d in 2016 vs. our 1.5 \
-                            mb/d previous forecast. Driving this forecast is our assumption that 2016 global growth \
-                            will remain at 2015\'s 3.25% pace vs. our prior 3.75% assumption and our updated \
-                            forecast for roughly sequentially stable oil prices in 2016. Importantly we view the risks \
-                            to this demand growth forecast as clearly skewed to the downside, given China\'s \
-                            recent slowdown, its potential impact on EM growth and the negative feedback loop of \
-                            lower commodity prices on EM exporters facing large macro imbalances and debt. We \
-                            illustrate our demand sensitivity to various growth and price outcomes in Exhibit 4."),
-                ], className = "written-text eight columns", style={'margin-bottom': '10px'}),
+                            style={'padding-top': '15px', "padding-bottom": "5px"}),
+                    html.Ul([
+                        html.Li("We expect demand growth to sequentially weaken to 1.275 mb/d in 2016 vs. our 1.5 \
+                                mb/d previous forecast. Driving this forecast is our assumption that 2016 global growth \
+                                will remain at 2015\'s 3.25% pace vs. our prior 3.75% assumption and our updated \
+                                forecast for roughly sequentially stable oil prices in 2016. Importantly we view the risks \
+                                to this demand growth forecast as clearly skewed to the downside, given China\'s \
+                                recent slowdown, its potential impact on EM growth and the negative feedback loop of \
+                                lower commodity prices on EM exporters facing large macro imbalances and debt. We \
+                                illustrate our demand sensitivity to various growth and price outcomes in Exhibit 4."),
+                    ], className="twelve columns row"),
+                ], className = "written-text eight columns"),
                 html.Div([
                         html.Div([
                             html.Strong("Exhibit 3: Our VAR analysis shows that demand \
@@ -270,30 +279,32 @@ app.layout = html.Div([
         html.Div([
             html.Div([
                 html.Div([
-                    html.Li("Our supply outlook is similar to what occurred in 2015. We forecast more production \
-                            growth from OPEC, up 615 kb/d yoy vs. 2015, driven by Saudi, Iraq and Iran. For Iran, \
-                            we assume that production will grow by 260 kb/d on average. We only assume that the \
-                            Neutral zone output will recover to reach 200 kb/d by end-2016 up from zero currently \
-                            and 520 kb/d in 2014, leaving risk to our OPEC forecast skewed to the upside."),
-                    html.Li("This forecast reflects our view that OPEC\'s resolve in growing market share has likely \
-                            strengthened following the pick-up in US activity that occurred this summer once WTI \
-                            prices returned to $60/bbl. Despite the fiscal challenges that low oil prices create for \
-                            OPEC producers, the alternative of reducing production would similarly undermine \
-                            long-term revenues. As a result we continue to view production growth and the \
-                            associated investment stimulus to the wider economy as the optimal strategy to help \
-                            offset these lower revenues, with low-cost OPEC producers likely to expand capacity \
-                            now that they have pushed output to near max utilization. Even Venezuela has \
-                            accepted further Chinese financing to produce oil from older fields. Ultimately, the one \
-                            scenario where we could see OPEC pursuing a cartel strategy and cutting output is one \
-                            where fundamentals push prices down to the steep part of the cash-cost curve 3 , a likely \
-                            outcome should oil demand growth weaken sharply, as we discuss later. However this \
-                            production cut would occur at much lower oil prices."),
-                    html.Li("We continue to expect that non-OPEC production outside of the US Lower 48 and NGL \
-                            will remain resilient, declining only by 220 kb/d in 2016 with growth in the GoM, \
-                            Canada, Argentina, Brazil and Russia. This reflects our view that the production outlook \
-                            to 2017 remains broadly determined by investments already made. Importantly, the \
-                            well-publicized shale cost reduction is occurring globally as well, driven by productivity \
-                            gains, a substantially stronger dollar and sharp declines in other commodity prices."),
+                    html.Ul([
+                            html.Li("Our supply outlook is similar to what occurred in 2015. We forecast more production \
+                                    growth from OPEC, up 615 kb/d yoy vs. 2015, driven by Saudi, Iraq and Iran. For Iran, \
+                                    we assume that production will grow by 260 kb/d on average. We only assume that the \
+                                    Neutral zone output will recover to reach 200 kb/d by end-2016 up from zero currently \
+                                    and 520 kb/d in 2014, leaving risk to our OPEC forecast skewed to the upside."),
+                            html.Li("This forecast reflects our view that OPEC\'s resolve in growing market share has likely \
+                                    strengthened following the pick-up in US activity that occurred this summer once WTI \
+                                    prices returned to $60/bbl. Despite the fiscal challenges that low oil prices create for \
+                                    OPEC producers, the alternative of reducing production would similarly undermine \
+                                    long-term revenues. As a result we continue to view production growth and the \
+                                    associated investment stimulus to the wider economy as the optimal strategy to help \
+                                    offset these lower revenues, with low-cost OPEC producers likely to expand capacity \
+                                    now that they have pushed output to near max utilization. Even Venezuela has \
+                                    accepted further Chinese financing to produce oil from older fields. Ultimately, the one \
+                                    scenario where we could see OPEC pursuing a cartel strategy and cutting output is one \
+                                    where fundamentals push prices down to the steep part of the cash-cost curve 3 , a likely \
+                                    outcome should oil demand growth weaken sharply, as we discuss later. However this \
+                                    production cut would occur at much lower oil prices."),
+                            html.Li("We continue to expect that non-OPEC production outside of the US Lower 48 and NGL \
+                                    will remain resilient, declining only by 220 kb/d in 2016 with growth in the GoM, \
+                                    Canada, Argentina, Brazil and Russia. This reflects our view that the production outlook \
+                                    to 2017 remains broadly determined by investments already made. Importantly, the \
+                                    well-publicized shale cost reduction is occurring globally as well, driven by productivity \
+                                    gains, a substantially stronger dollar and sharp declines in other commodity prices."),
+                    ], className="twelve columns row"),
                     dcc.Markdown("Given this slower expected demand growth in the face of growing OPEC production and \
                             resilient non-OPEC ex. US production, **we now forecast that US Lower 48 crude and \
                             NGL production will need to decline by 585 kb/d in 2016 with other non-OPEC \
@@ -332,8 +343,8 @@ app.layout = html.Div([
                             average owned by weak balance sheets and strong balance sheets owning lower-quality \
                             producing assets. This runs opposite to history when weak balance sheets typically owned \
                             high-cost assets, creating a linear relationship between lower prices and financial stress \
-                            which led to more financially motivated supply cuts as prices dropped."),
-                    html.P("As a result, our updated price forecast requires oil prices to stay lower for longer to achieve \
+                            which led to more financially motivated supply cuts as prices dropped.", style={"padding-bottom": "5px"}),
+                    dcc.Markdown("As a result, our updated price forecast requires oil prices to stay lower for longer to achieve \
                             a sufficient US and non-OPEC production decline. We now forecast that WTI oil prices need \
                             to remain near current levels and below the forward curve through 4Q16, with most \
                             downside during shoulder months. Specifically, we are lowering our 1-, 3-, 6- and 12-mo \
@@ -455,25 +466,27 @@ app.layout = html.Div([
                                     China is currently 375 mb, with our balance pointing to a 240 mb ex. China \
                                     inventory build in between September 2015 and year-end 2016** (Exhibits 11 and \
                                     12):"),
-                    html.Li("We estimate OECD available storage capacity at 220 mb as of the end of August. This \
-                            is comprised of 80 mb of crude oil storage capacity in the US\' PADDs 1, 2 and 3, based \
-                            on historical peak utilization of EIA\'s assessment of US working storage capacity. US \
-                            clean product spare capacity (vs. peak stocks) is an additional 30 mb. We also assume \
-                            that OECD ex.-US storage has similar capacity than when storage peaked in 1999, \
-                            leaving 110 mb of available storage capacity."),
-                    html.Li("We proxy non-OECD storage capacity as follows: we identify commercial storage \
-                            capacity of 290 mb and refinery storage of 600 mb (assuming 7 days of crude and \
-                            product storage cover on 42 mb/d of runs). Combined this represents almost 900 mb of \
-                            total storage capacity and assuming that non-OECD storage capacity is as full as OECD \
-                            ex. US (92%) implies that remaining spare capacity is 70 mb."),
-                    html.Li("While we have data on total clean and dirty vessel capacity, information on actual \
-                            loadings is more limited. Based on Argus reported oil in transit and estimated floating \
-                            storage since 2009, we estimate an additional 85 mb of crude oil can be stored in \
-                            floating storage before vessel utilization reaches its recent peak of April 2010."),
-                    html.P("In the case of China, we estimate that the SPR ramp up has absorbed 550 kb/d through July, \
-                            following a 350 kb/d build out in 2014. Going forward we assume an additional 300 kb/d \
-                            increase in SPR capacity in 2016, with an additional 100 kb/d build in commercial crude and \
-                            product stocks."),
+                    html.Ul([
+                        html.Li("We estimate OECD available storage capacity at 220 mb as of the end of August. This \
+                                is comprised of 80 mb of crude oil storage capacity in the US\' PADDs 1, 2 and 3, based \
+                                on historical peak utilization of EIA\'s assessment of US working storage capacity. US \
+                                clean product spare capacity (vs. peak stocks) is an additional 30 mb. We also assume \
+                                that OECD ex.-US storage has similar capacity than when storage peaked in 1999, \
+                                leaving 110 mb of available storage capacity."),
+                        html.Li("We proxy non-OECD storage capacity as follows: we identify commercial storage \
+                                capacity of 290 mb and refinery storage of 600 mb (assuming 7 days of crude and \
+                                product storage cover on 42 mb/d of runs). Combined this represents almost 900 mb of \
+                                total storage capacity and assuming that non-OECD storage capacity is as full as OECD \
+                                ex. US (92%) implies that remaining spare capacity is 70 mb."),
+                        html.Li("While we have data on total clean and dirty vessel capacity, information on actual \
+                                loadings is more limited. Based on Argus reported oil in transit and estimated floating \
+                                storage since 2009, we estimate an additional 85 mb of crude oil can be stored in \
+                                floating storage before vessel utilization reaches its recent peak of April 2010."),
+                        html.P("In the case of China, we estimate that the SPR ramp up has absorbed 550 kb/d through July, \
+                                following a 350 kb/d build out in 2014. Going forward we assume an additional 300 kb/d \
+                                increase in SPR capacity in 2016, with an additional 100 kb/d build in commercial crude and \
+                                product stocks."),
+                    ], className="twelve columns row", style={"marginBottom": "0px"}),
                 ], className = "written-text no-header eight columns row"),
             ], className = "subpage"),
         ], className = "page"),
@@ -578,7 +591,7 @@ app.layout = html.Div([
                             US production growth in 2017 (of 300 kb/d), and as a result maintain our 2017 $60/bbl WTI \
                             price forecast, with prices trading by then above our US shale $55/bbl breakeven forecast. \
                             Our longer-term forecast is unchanged as well with continued productivity gains bringing \
-                            these numbers lower by $10/bbl by 2020 4 ..", style={"padding-bottom": "5px"}),
+                            these numbers lower by $10/bbl by 2020.", style={"padding-bottom": "5px"}),
                     html.P("Although our 2017 WTI forecast now sits above the forward curve given the recent sell off, \
                             we would not interpret that as a signal to buy long-dated oil. Historically, once the storage \
                             arbitrage that connects spot to forward prices is no longer needed, bear markets typically \
@@ -598,9 +611,9 @@ app.layout = html.Div([
                             html.Strong("Exhibit 17: US producers ramped up activity once funding markets reopened"),
                             html.P("Energy share of HY US debt issuance (rhs), monthly change in the US oil rig count (lhs)"),
                         ], className="title twelve columns"),
-                        html.Iframe(src="https://plot.ly/~alishobeiri/592.embed?modebar=false&link=false&autosize=true",
-                                    className="exhibit twelve columns", style={'padding-right':'150px'}, seamless="seamless", height="200"),
-                    ], className="twelve columns", style={'margin-right':'50px'}),
+                        html.Iframe(src="https://plot.ly/~alishobeiri/650.embed?modebar=false&link=false&autosize=true",
+                                    className="exhibit twelve columns", style={'padding-right':'150px', 'position': 'relative', 'bottom': '10px'}, seamless="seamless", height="300"),
+                    ], className="twelve columns", style={'margin-right':'25px'}),
                     html.Div([
                     html.H6("A later and shallow recover", style={"padding-bottom": "5px"}),
                     html.P("While we forecast that the supply and demand for the barrels of oil will likely find a balance \
@@ -613,9 +626,11 @@ app.layout = html.Div([
         html.Div([
             html.Div([
                 html.Div([
-                    #html.Br([]),
-                    html.P("other factors will likely weigh on prices, as we argued in A lost decade reinforces lower for \
-                            longer, August 6, 2015.", style={"padding-top": "40px", "padding-bottom": "5px"}),
+                    #html.Br
+                    html.Ul([
+                        dcc.Markdown("other factors will likely weigh on prices, as we argued in *A lost decade reinforces lower for \
+                                    longer*, August 6, 2015."),
+                    ], style={"margin": "0px"}),
                     html.P("As we have noted before, it is important to emphasize that markets have never seen such a \
                             large appreciation in the US dollar at the same time they have seen such a large surplus in \
                             the oil market, exacerbating both the downward pressure on EM commodity importers and \
@@ -642,6 +657,46 @@ app.layout = html.Div([
             ], className = "subpage"),
         ], className = "page"),
 
+        html.Div([
+            html.Div([
+                html.Div([
+                    html.H1("Balance table breakdown"),
+                ], className = "header-text", style={"padding-top": "40px"}),
+                html.Div([
+                    #html.Br([]),
+                    html.Div([
+                        html.Strong("Exhibit 18: Global supply-demand balance (thousand barrels per day)"),
+                        html.Img(src="http://i.imgur.com/c7PM25P.png",
+                                    className="exhibit", style={"padding-bottom": "10px", "margin-top": "15px", "margin-right": "0px"}, width="675"),
+                    ], className="row title", style={"padding-left": "0px", "margin-left": "50px", "margin-top": "35px", "font-size": "1.4rem"}),
+
+                ], className = "twelve columns"),
+                    html.Div([
+                        #html.Br([]),
+                        html.Div([
+                            html.Strong("Exhibit 19: Global demand estimates (thousand barrels per day)"),
+                            html.Img(src="http://i.imgur.com/Pizq3rk.png",
+                                        className="exhibit", style={"padding-bottom": "10px", "margin-top": "15px", "margin-right": "0px"}, height="250", width="675"),
+                        ], className="row title", style={"padding-left": "0px", "margin-left": "50px", "margin-top": "35px", "font-size": "1.4rem"}),
+                ], className = "twelve columns"),
+            ], className = "subpage"),
+        ], className = "page"),
+
+        html.Div([
+            html.Div([
+                html.Div([
+                    #html.Br([]),
+                    html.Div([
+                        html.Strong("Exhibit 20: Global supply estimates (thousand barrels per day)", className="no-header", style={"padding-top": "500px"}),
+                        html.Img(src="http://i.imgur.com/zdXONlc.png",
+                                    className="exhibit", style={"padding-bottom": "10px", "margin-top": "15px", "margin-right": "0px"}, width="675"),
+                    ], className="row title", style={"padding-left": "0px", "margin-left": "50px", "margin-top": "35px",
+                                                     "font-size": "1.4rem", "margin-top": "90px"}),
+
+                ], className = "twelve columns"),
+            ], className = "subpage"),
+        ], className = "page"),
+
 ])
 
 external_css = ["https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
@@ -651,6 +706,12 @@ external_css = ["https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.
 
 for css in external_css:
     app.css.append_css({"external_url": css})
+
+external_js = [ "https://code.jquery.com/jquery-3.2.1.min.js",
+        "https://codepen.io/plotly/pen/KmyPZr.js" ]
+
+for js in external_js:
+    app.scripts.append_script({ "external_url": js })
 
 if __name__ == '__main__':
     app.server.run()
