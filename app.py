@@ -15,11 +15,13 @@ app = dash.Dash('The New Oil Order', server=server)
 
 app.layout = html.Div([
 
-        html.Div([ #page 1
+
+        #Page 1
+        html.Div([
             html.A([ 'Print PDF' ],
                    className="button no-print",
                    style=dict(position="absolute", top=-40, right=0)),
-            # Row 1 (Header)
+            # Letterhead Title
             html.Div([
                 html.Div([
                         html.H6("September 11, 2015", style={'position': 'relative', 'top': '25px', 'font-size': '0.9rem'}),
@@ -52,8 +54,7 @@ app.layout = html.Div([
                         html.Br([])
                 ], className = 'letterhead'),
 
-            html.Br([]),
-            #Page 1 Text
+                #Page 1 Text
                 html.Div([
                     html.Div([
                         html.Strong("Lower oil prices warranted by fundamentals", className='strongPurple'),
@@ -111,10 +112,14 @@ app.layout = html.Div([
                         ], className = "contact five columns")
                 ], className = "firstPage row"),
             ], className = "subpage"),
+
         ], className = "page"),
 
+
+        #Page 2
         html.Div([
             html.Div([
+                #Page 2 Text
                 html.Div([
                     html.H1("Executive Summary", style={'font-weight': 'bold'}),
                 ], className = "header-text"),
@@ -171,15 +176,20 @@ app.layout = html.Div([
                             market with only lower prices for longer rebalancing the capital markets for energy.", style={"padding-bottom": "5px"}),
                 ], className = "written-text eight columns"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+
+        #Page 3
         html.Div([
             html.Div([
                 html.Div([
                     html.H1("Lower for even longer"),
                 ], className = "header-text"),
                 html.Div([
-                    #html.Br([]),
+                    #Page 3 Text
                     html.H6("Oil sell-off precipitated by macro concerns, but warranted by oil fundamentals"),
                     html.P("Oil prices have declined sharply over the past month, along with other asset classes, to \
                             retrace their lows of last winter. Importantly, we view this pull back in prices to our Fall WTI \
@@ -218,10 +228,15 @@ app.layout = html.Div([
                             counter-seasonally large stock builds in July-August (Exhibit 2).")
                 ], className = "written-text eight columns"),
             ], className = "subpage"),
+                        html.A([ 'Print PDF' ],
+                               className="button no-print",
+                               style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 4
         html.Div([
             html.Div([
+                #Page 4 Exhibits (1)
                 html.Div([
                         html.Div([
                             html.Strong("Exhibit 1: The global oil market is oversupplied as production remains 3.0 mb/d higher than last year"),
@@ -238,6 +253,7 @@ app.layout = html.Div([
                         html.Iframe(src="https://plot.ly/~alishobeiri/204.embed?modebar=false&link=false&autosize=true",
                                     className="exhibit six columns", seamless="seamless", style={}, height="250"),
                 ], className="thirdPage row"),
+                #Page 4 Text
                 html.Div([
                     html.P("Going forward we expect this oversupply to persist until late 2016. Specifically: ",
                             style={'padding-top': '15px', "padding-bottom": "5px"}),
@@ -252,6 +268,7 @@ app.layout = html.Div([
                                 illustrate our demand sensitivity to various growth and price outcomes in Exhibit 4."),
                     ], className="twelve columns row"),
                 ], className = "written-text eight columns"),
+                #Page 4 Exhibits (2)
                 html.Div([
                         html.Div([
                             html.Strong("Exhibit 3: Our VAR analysis shows that demand \
@@ -274,10 +291,15 @@ app.layout = html.Div([
                                     className="exhibit six columns", style={"padding-bottom": "100px", "padding-top": "20px"}, height="225"),
                 ], className="thirdPage row"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 5
         html.Div([
             html.Div([
+                #Page 5 Text
                 html.Div([
                     html.Ul([
                             html.Li("Our supply outlook is similar to what occurred in 2015. We forecast more production \
@@ -311,6 +333,7 @@ app.layout = html.Div([
                             production down 220 kb/d to end the global oil market oversupply by 4Q16**, a \
                             similar time frame to what we laid out in our May forecast."),
                 ], className="written-text eight columns no-header row"),
+                #Page 5 Exhibits
                         html.Div([
                                 html.Div([
                                     html.Strong("Exhibit 5: We continue to expect that the global oil \
@@ -332,10 +355,15 @@ app.layout = html.Div([
                                         height="250", style={"padding-bottom": "10px", 'position': 'relative', 'bottom': '25px'}),
                     ], className="thirdPage row"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 6
         html.Div([
             html.Div([
+                #Page 6 Text
                 html.Div([
                     html.P("Consistent with our prior forecasts, we continue to view US shale as the likely near-term \
                             source of supply adjustment given both the short-cycle nature of shale production and \
@@ -355,17 +383,18 @@ app.layout = html.Div([
                             storage capacity and elevated refinery runs lead to rising US crude oil imports and a $4/bbl \
                             differential.")
                 ], className="written-text eight columns no-header row", style={"padding-bottom": "10px"}),
-                        html.Div([
-                                html.Div([
-                                    html.Strong("Exhibit 7: We lower our 2015-16 oil price forecasts..."),
-                                    html.P("$/bbl", style={"font-size": "11"}),
-                                ], className="title six columns"),
-                                html.Div([
-                                    html.Strong("Exhibit 8: ... and expect prices to remain below current \
-                                    forwards until 2017"),
-                                    html.P("$/bbl", style={"font-size": "11"}),
-                                ], className="title six columns"),
-                            ], className="thirdPage first row", style={"margin-top": "100px"}),
+                #Page 6 Exhibits
+                    html.Div([
+                            html.Div([
+                                html.Strong("Exhibit 7: We lower our 2015-16 oil price forecasts..."),
+                                html.P("$/bbl", style={"font-size": "11"}),
+                            ], className="title six columns"),
+                            html.Div([
+                                html.Strong("Exhibit 8: ... and expect prices to remain below current \
+                                forwards until 2017"),
+                                html.P("$/bbl", style={"font-size": "11"}),
+                            ], className="title six columns"),
+                        ], className="thirdPage first row", style={"margin-top": "100px"}),
                     html.Div([
                             html.Img(src="http://i.imgur.com/DBkxRT2.png",
                                         className="exhibit six columns", style={"padding-bottom": "40px", "padding-top": "0px"}, height="225"),
@@ -373,6 +402,7 @@ app.layout = html.Div([
                                         className="exhibit six columns", seamless="seamless",
                                         height="250", style={"padding-bottom": "10px", 'position': 'relative', 'bottom': '25px'}),
                     ], className="thirdPage row"),
+                    #Page 6 Text
                      html.Div([
                                 html.H6("Declining US production is but one path to rebalancing the oil market"),
                                 html.P("It is important to emphasize that as we now believe the market requires non-OPEC \
@@ -387,39 +417,45 @@ app.layout = html.Div([
                                         than HY bankruptcies."),
                             ], className = "written-text eight columns"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 7
         html.Div([
             html.Div([
-                html.Div([
-                    html.P("This is important, as ultimately the levers to force HY producers into lower production, \
-                            such as borrowing basis redeterminations, debt maturities and hedge coverage, are \
-                            significantly less binding for IG E&Ps. It is instead management\'s focus on balancing capex \
-                            and cash flow and investors\' willingness to finance funding gaps that are the levers of \
-                            adjustments for this cohort of companies. And while HY debt markets may be once again \
-                            shutting, tentative signs of greater discipline by US IG E&Ps have so far only translated in \
-                            stabilizing production guidance rather than pointing to the decline that our global oil \
-                            balance requires.", style={"padding-bottom": "5px"}),
-                    html.P("As a result, the sharp intensification in producer financial stress observed recently - with \
-                            forward oil prices and energy equity share prices at multi-year lows (and credit spreads at \
-                            highs) - is unlikely to yield sufficient financial stress in the short-term. So while this \
-                            deterioration in financial conditions is finally reflecting the markets\' decreasing confidence \
-                            in a quick rebound in prices and a recognition that the rebalancing of supply and demand \
-                            will likely prove to be far more difficult than previously expected, we now believe that such \
-                            stress needs to remain in place well into 2016 and up until evidence emerges that US shale \
-                            production growth is actually required.", style={"padding-bottom": "5px"}),
-                    html.P("This short-term adjustment mechanism is further put at risk by the deeply entrenched \
-                            expectation - ours included - that the global oil market will require shale production \
-                            growth within the next couple years. This creates the risk that if investor capital is available \
-                            to accommodate producers continuing to outspend cash flow, the slowdown in US \
-                            production will take place too late or not at all, forcing oil markets to clear as they \
-                            historically have, through a collapse to production costs once the surplus breaches \
-                            logistical and storage capacity.", style={"padding-bottom": "5px"}),
-                    html.P("Net, while we are increasingly convinced that we need to see lower prices for longer to \
-                            achieve a production cut, the origin of this production decline and its forcing mechanism is \
-                            growing uncertain, raising the possibility that we may ultimately clear at a sharply lower \
-                            price."),
-                ], className="written-text eight columns no-header row", style={"padding-bottom": "40px"}),
+                #Page 7 Text
+                    html.Div([
+                        html.P("This is important, as ultimately the levers to force HY producers into lower production, \
+                                such as borrowing basis redeterminations, debt maturities and hedge coverage, are \
+                                significantly less binding for IG E&Ps. It is instead management\'s focus on balancing capex \
+                                and cash flow and investors\' willingness to finance funding gaps that are the levers of \
+                                adjustments for this cohort of companies. And while HY debt markets may be once again \
+                                shutting, tentative signs of greater discipline by US IG E&Ps have so far only translated in \
+                                stabilizing production guidance rather than pointing to the decline that our global oil \
+                                balance requires.", style={"padding-bottom": "5px"}),
+                        html.P("As a result, the sharp intensification in producer financial stress observed recently - with \
+                                forward oil prices and energy equity share prices at multi-year lows (and credit spreads at \
+                                highs) - is unlikely to yield sufficient financial stress in the short-term. So while this \
+                                deterioration in financial conditions is finally reflecting the markets\' decreasing confidence \
+                                in a quick rebound in prices and a recognition that the rebalancing of supply and demand \
+                                will likely prove to be far more difficult than previously expected, we now believe that such \
+                                stress needs to remain in place well into 2016 and up until evidence emerges that US shale \
+                                production growth is actually required.", style={"padding-bottom": "5px"}),
+                        html.P("This short-term adjustment mechanism is further put at risk by the deeply entrenched \
+                                expectation - ours included - that the global oil market will require shale production \
+                                growth within the next couple years. This creates the risk that if investor capital is available \
+                                to accommodate producers continuing to outspend cash flow, the slowdown in US \
+                                production will take place too late or not at all, forcing oil markets to clear as they \
+                                historically have, through a collapse to production costs once the surplus breaches \
+                                logistical and storage capacity.", style={"padding-bottom": "5px"}),
+                        html.P("Net, while we are increasingly convinced that we need to see lower prices for longer to \
+                                achieve a production cut, the origin of this production decline and its forcing mechanism is \
+                                growing uncertain, raising the possibility that we may ultimately clear at a sharply lower \
+                                price."),
+                    ], className="written-text eight columns no-header row", style={"padding-bottom": "40px"}),
+                #Page 7 Exhibits
                         html.Div([
                                 html.Div([
                                     html.Strong("Exhibit 9: Rebalancing depends now more on IG behavior \
@@ -443,12 +479,16 @@ app.layout = html.Div([
                                         height="250", style={'position': 'relative', 'bottom': '25px'}),
                     ], className="thirdPage row"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 8
         html.Div([
             html.Div([
+                #Page 8 Text
                 html.Div([
-                    #html.Br([]),
                     html.H6("Operational stress key downside risk to our forecast in coming months"),
                     html.P("With storage continuing to fill globally and uncertainty on the market\'s balancing \
                             mechanism, the odds of resolving the global balance through a fall to cash costs has \
@@ -489,9 +529,16 @@ app.layout = html.Div([
                     ], className="twelve columns row", style={"marginBottom": "0px"}),
                 ], className = "written-text no-header eight columns row"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
+
+        #Page 9
         html.Div([
+
             html.Div([
+                #Page 9 Exhibits
                 html.Div([
                         html.Div([
                             html.Strong("Exhibit 11: We estimate that remaining identifiable \
@@ -510,6 +557,7 @@ app.layout = html.Div([
                         html.Iframe(src="https://plot.ly/~alishobeiri/584.embed?modebar=false&link=false&autosize=true",
                                     className="exhibit six columns", seamless="seamless", style={}, height="250"),
                 ], className="thirdPage row"),
+                #Page 9 Text
                 html.Div([
                     html.P("Importantly, we acknowledge that the uncertainty around this estimated spare storage \
                             capacity is significant. First, there is uncertainty on the starting point of storage utilization \
@@ -535,10 +583,15 @@ app.layout = html.Div([
                             line with demand, as occurred in 1998 (Exhibit 14).", style={'padding-top': '5px'}),
                 ], className="written-text eight columns", style={'padding-top': '25px'}),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 10
         html.Div([
             html.Div([
+                #Page 10 Exhibits (1)
                 html.Div([
                         html.Div([
                             html.Strong("Exhibit 13: We believe that most of the miscellaneous to \
@@ -557,13 +610,15 @@ app.layout = html.Div([
                         html.Iframe(src="https://plot.ly/~alishobeiri/590.embed?modebar=false&link=false&autosize=true",
                                     className="exhibit six columns", seamless="seamless", style={}, height="250"),
                 ], className="thirdPage row"),
-                    html.P("From a level perspective, we estimate high cost producers have operating breakevens in \
-                            the $30/bbl Brent prices. However these producers, typically Canadian oil sands producers, \
-                            have also limited leverage and elevated fixed costs to shutting down production. As a \
-                            result, a fall to cash costs could likely take prices instead to the highly levered high-cost US \
-                            shale producers, whose cash breakevens are closer to $20/bbl, on our estimates (Brent \
-                            equivalent).", className="thirdPage written-text row eight columns", style={'padding-top': '25px'}),
+                #Page 10 Text
+                html.P("From a level perspective, we estimate high cost producers have operating breakevens in \
+                        the $30/bbl Brent prices. However these producers, typically Canadian oil sands producers, \
+                        have also limited leverage and elevated fixed costs to shutting down production. As a \
+                        result, a fall to cash costs could likely take prices instead to the highly levered high-cost US \
+                        shale producers, whose cash breakevens are closer to $20/bbl, on our estimates (Brent \
+                        equivalent).", className="thirdPage written-text row eight columns", style={'padding-top': '25px'}),
                 html.Div([
+                #Page 10 Exhibits (2)
                         html.Div([
                             html.Strong("Exhibit 15: The highest cash costs are near $30/bbl..."),
                             html.P("Oil cash cost (in Brent equivalent $/bbl)", style={"font-size": "11"}),
@@ -580,12 +635,16 @@ app.layout = html.Div([
                                     className="exhibit six columns", seamless="seamless", style={}, height="250"),
                 ], className="thirdPage row"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 11
         html.Div([
             html.Div([
                 html.Div([
-                    #html.Br([]),
+                    #Page 11 Text
                     html.H6("US shale growth not required until 2017"),
                     html.P("Under our updated oil supply and demand forecast, we believe the market only requires \
                             US production growth in 2017 (of 300 kb/d), and as a result maintain our 2017 $60/bbl WTI \
@@ -607,6 +666,7 @@ app.layout = html.Div([
                             (Exhibit 17) 5 . This reinforces our conviction that sustainability low spot and forward prices \
                             are required until there is greater confidence that US shale growth is indeed required.", style={"padding-bottom": "15px"}),
                     html.Div([
+                        #Page 11 Exhibits
                         html.Div([
                             html.Strong("Exhibit 17: US producers ramped up activity once funding markets reopened"),
                             html.P("Energy share of HY US debt issuance (rhs), monthly change in the US oil rig count (lhs)", style={"font-size": "11"}),
@@ -615,18 +675,23 @@ app.layout = html.Div([
                                     className="exhibit twelve columns", style={'padding-right':'150px', 'position': 'relative', 'bottom': '10px'}, seamless="seamless", height="300"),
                     ], className="twelve columns", style={'margin-right':'25px'}),
                     html.Div([
-                    html.H6("A later and shallow recovery", style={"padding-bottom": "5px"}),
-                    html.P("While we forecast that the supply and demand for the barrels of oil will likely find a balance \
-                            by the end of 2016, this doesn\'t mean a sharp rebound in prices will occur quickly as many", style={"padding-bottom": "5px"}),
+                        #Page 11 Text
+                        html.H6("A later and shallow recovery", style={"padding-bottom": "5px"}),
+                        html.P("While we forecast that the supply and demand for the barrels of oil will likely find a balance \
+                                by the end of 2016, this doesn\'t mean a sharp rebound in prices will occur quickly as many", style={"padding-bottom": "5px"}),
                     ], className="written-text"),
                 ], className = "written-text no-header eight columns"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 12
         html.Div([
             html.Div([
                 html.Div([
-                    #html.Br
+                    #Page 12 Text
                     html.Ul([
                         dcc.Markdown("other factors will likely weigh on prices, as we argued in *A lost decade reinforces lower for \
                                     longer*, August 6, 2015."),
@@ -655,9 +720,14 @@ app.layout = html.Div([
                             markets for energy need to be rebalanced through consolidation and capital restructuring."),
                 ], className = "written-text no-header eight columns"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 13
         html.Div([
+            #Page 13 Exhibits
             html.Div([
                 html.Div([
                     html.H1("Balance table breakdown"),
@@ -680,21 +750,28 @@ app.layout = html.Div([
                         ], className="row title", style={"padding-left": "0px", "margin-left": "50px", "margin-top": "35px", "font-size": "1.4rem"}),
                 ], className = "twelve columns"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
+        #Page 14
         html.Div([
             html.Div([
                 html.Div([
-                    #html.Br([]),
+                    #Page 14 Exhibits
                     html.Div([
                         html.Strong("Exhibit 20: Global supply estimates (thousand barrels per day)", className="no-header"),
                         html.Img(src="http://i.imgur.com/zdXONlc.png",
                                     className="exhibit", style={"padding-bottom": "10px", "margin-top": "15px", "margin-right": "0px"}, width="675"),
                     ], className="row title no-header", style={"padding-left": "0px", "margin-left": "50px", "margin-top": "35px",
-                                                     "font-size": "1.4rem", "margin-top": "90px"}),
+                                                     "font-size": "1.4rem", "margin-top": "45px"}),
 
                 ], className = "twelve columns no-header"),
             ], className = "subpage"),
+            html.A([ 'Print PDF' ],
+                   className="button no-print",
+                   style=dict(position="absolute", top=-40, right=0)),
         ], className = "page"),
 
 ])
