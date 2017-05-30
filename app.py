@@ -551,7 +551,8 @@ app.layout = html.Div([
                     ], className="thirdPage first row", style={'position': 'relative', 'top': '20px'}),
                 html.Div([
                         html.Img(src="http://i.imgur.com/wX5mQYn.png",
-                                    className="exhibit six columns", style={"padding-bottom": "40px", "margin-top": "25px"}, height="225"),
+                                    className="exhibit six columns", style={"padding-bottom": "40px", "margin-top": "25px",
+                                                                            "padding-right": "5px", "padding-left": "5px"}, height="225"),
                         html.Iframe(src="https://plot.ly/~alishobeiri/584.embed?modebar=false&link=false&autosize=true",
                                     className="exhibit six columns", seamless="seamless", style={}, height="250"),
                 ], className="thirdPage row"),
