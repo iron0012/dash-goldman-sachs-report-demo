@@ -286,7 +286,7 @@ app.layout = html.Div([
                                     className="exhibit six columns", seamless="seamless",
                                     height="250", style={"padding-bottom": "10px", 'position': 'relative', 'bottom': '25px'}),
                         html.Img(src="http://i.imgur.com/IJsVT9P.png",
-                                    className="exhibit six columns", style={"padding-bottom": "100px", "padding-top": "20px"}, height="225"),
+                                    className="exhibit six columns", style={"padding-bottom": "100px", "padding-top": "20px", "padding-left": "5px", "padding-right": "5px"}, height="225"),
                 ], className="thirdPage row"),
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
@@ -692,7 +692,7 @@ app.layout = html.Div([
                     html.Ul([
                         dcc.Markdown("other factors will likely weigh on prices, as we argued in *A lost decade reinforces lower for \
                                     longer*, August 6, 2015."),
-                    ], className="Test-this", style={"margin": "0px", "padding": "0px"}),
+                    ], style={"margin": "0px", "padding": "0px"}),
                     html.P("As we have noted before, it is important to emphasize that markets have never seen such a \
                             large appreciation in the US dollar at the same time they have seen such a large surplus in \
                             the oil market, exacerbating both the downward pressure on EM commodity importers and \
