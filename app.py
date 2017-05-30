@@ -252,7 +252,7 @@ app.layout = html.Div([
                 #Page 4 Text
                 html.Div([
                     html.P("Going forward we expect this oversupply to persist until late 2016. Specifically: ",
-                            style={'padding-top': '15px', "padding-bottom": "5px"}),
+                            style={'padding-top': '20px', "padding-bottom": "5px"}),
                     html.Ul([
                         html.Li("We expect demand growth to sequentially weaken to 1.275 mb/d in 2016 vs. our 1.5 \
                                 mb/d previous forecast. Driving this forecast is our assumption that 2016 global growth \
@@ -261,7 +261,8 @@ app.layout = html.Div([
                                 to this demand growth forecast as clearly skewed to the downside, given China\'s \
                                 recent slowdown, its potential impact on EM growth and the negative feedback loop of \
                                 lower commodity prices on EM exporters facing large macro imbalances and debt. We \
-                                illustrate our demand sensitivity to various growth and price outcomes in Exhibit 4."),
+                                illustrate our demand sensitivity to various growth and price outcomes in Exhibit 4."
+                                , style={"padding-bottom": "10px"}),
                     ], className="twelve columns row"),
                 ], className = "written-text eight columns"),
                 #Page 4 Exhibits (2)
@@ -668,7 +669,7 @@ app.layout = html.Div([
                             html.P("Energy share of HY US debt issuance (rhs), monthly change in the US oil rig count (lhs)", style={"font-size": "11"}),
                         ], className="title twelve columns"),
                         html.Iframe(src="https://plot.ly/~alishobeiri/650.embed?modebar=false&link=false&autosize=true",
-                                    className="exhibit twelve columns", style={'padding-right':'150px', 'position': 'relative', 'bottom': '10px'}, seamless="seamless", height="300"),
+                                    className="exhibit twelve columns", style={'padding-right':'150px', 'position': 'relative', 'bottom': '15px'}, seamless="seamless", height="300"),
                     ], className="twelve columns", style={'margin-right':'25px'}),
                     html.Div([
                         #Page 11 Text
@@ -691,7 +692,7 @@ app.layout = html.Div([
                     html.Ul([
                         dcc.Markdown("other factors will likely weigh on prices, as we argued in *A lost decade reinforces lower for \
                                     longer*, August 6, 2015."),
-                    ], style={"margin": "0px", "padding": "0px"}),
+                    ], className="Test-this", style={"margin": "0px", "padding": "0px"}),
                     html.P("As we have noted before, it is important to emphasize that markets have never seen such a \
                             large appreciation in the US dollar at the same time they have seen such a large surplus in \
                             the oil market, exacerbating both the downward pressure on EM commodity importers and \
