@@ -11,17 +11,18 @@ app = dash.Dash('The New Oil Order', server=server)
 
 app.layout = html.Div([
 
-
-        #Page 1
+        # Page 1
         html.Div([
-            html.A([ 'Print PDF' ],
+            html.A(['Print PDF'],
                    className="button no-print",
                    style=dict(position="absolute", top=-35, right=0)),
             # Letterhead Title
             html.Div([
                 html.Div([
-                        html.H6("September 11, 2015", style={'position': 'relative', 'top': '25px', 'font-size': '0.9rem'}),
-                        html.H4("The New Oil Order", style={'font-weight': 'bold', 'position': 'relative', 'top': '25px', 'font-size': '2.1rem'}),
+                        html.H6("September 11, 2015",
+                        style={'position': 'relative', 'top': '25px', 'font-size': '0.9rem'}),
+                        html.H4("The New Oil Order",
+                        style={'font-weight': 'bold', 'position': 'relative', 'top': '25px', 'font-size': '2.1rem'}),
                         html.Br([]),
                         html.Img(src="http://i.imgur.com/6FHYhuO.png", \
                                  style={
@@ -48,7 +49,7 @@ app.layout = html.Div([
                                         }),
                         html.Br([]),
                         html.Br([])
-                ], className = 'letterhead'),
+                ], className='letterhead'),
 
                 #Page 1 Text
                 html.Div([
