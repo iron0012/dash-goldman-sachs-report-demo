@@ -16,7 +16,7 @@ app.layout = html.Div([
         html.Div([
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
             # Letterhead Title
             html.Div([
                 html.Div([
@@ -174,7 +174,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
 
@@ -226,7 +226,7 @@ app.layout = html.Div([
             ], className = "subpage"),
                         html.A([ 'Print PDF' ],
                                className="button no-print",
-                               style=dict(position="absolute", top=-40, right=0)),
+                               style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 4
@@ -289,7 +289,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 5
@@ -353,7 +353,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 6
@@ -415,7 +415,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 7
@@ -477,7 +477,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 8
@@ -518,16 +518,16 @@ app.layout = html.Div([
                                 loadings is more limited. Based on Argus reported oil in transit and estimated floating \
                                 storage since 2009, we estimate an additional 85 mb of crude oil can be stored in \
                                 floating storage before vessel utilization reaches its recent peak of April 2010."),
+                    ], className="twelve columns row", style={"marginBottom": "0px"}),
                         html.P("In the case of China, we estimate that the SPR ramp up has absorbed 550 kb/d through July, \
                                 following a 350 kb/d build out in 2014. Going forward we assume an additional 300 kb/d \
                                 increase in SPR capacity in 2016, with an additional 100 kb/d build in commercial crude and \
                                 product stocks."),
-                    ], className="twelve columns row", style={"marginBottom": "0px"}),
                 ], className = "written-text no-header eight columns row"),
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 9
@@ -581,7 +581,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 10
@@ -633,7 +633,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 11
@@ -680,7 +680,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 12
@@ -691,7 +691,7 @@ app.layout = html.Div([
                     html.Ul([
                         dcc.Markdown("other factors will likely weigh on prices, as we argued in *A lost decade reinforces lower for \
                                     longer*, August 6, 2015."),
-                    ], style={"margin": "0px"}),
+                    ], style={"margin": "0px", "padding": "0px"}),
                     html.P("As we have noted before, it is important to emphasize that markets have never seen such a \
                             large appreciation in the US dollar at the same time they have seen such a large surplus in \
                             the oil market, exacerbating both the downward pressure on EM commodity importers and \
@@ -718,7 +718,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 13
@@ -748,7 +748,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
         #Page 14
@@ -767,7 +767,7 @@ app.layout = html.Div([
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
                    className="button no-print",
-                   style=dict(position="absolute", top=-40, right=0)),
+                   style=dict(position="absolute", top=-35, right=0)),
         ], className = "page"),
 
 ])
