@@ -49,7 +49,7 @@ app.layout = html.Div([
                                         }),
                         html.Br([]),
                         html.Br([])
-                ], className='letterhead'),
+                ], className = 'letterhead'),
 
                 #Page 1 Text
                 html.Div([
@@ -672,12 +672,10 @@ app.layout = html.Div([
                         html.Iframe(src="https://plot.ly/~alishobeiri/650.embed?modebar=false&link=false&autosize=true",
                                     className="exhibit twelve columns", style={'padding-right':'150px', 'position': 'relative', 'bottom': '15px'}, seamless="seamless", height="300"),
                     ], className="twelve columns", style={'margin-right':'25px'}),
-                    html.Div([
-                        #Page 11 Text
-                        html.H6("A later and shallow recovery", style={"padding-bottom": "5px"}),
-                        html.P("While we forecast that the supply and demand for the barrels of oil will likely find a balance \
-                                by the end of 2016, this doesn\'t mean a sharp rebound in prices will occur quickly as many", style={"padding-bottom": "5px"}),
-                    ], className="written-text"),
+                    #Page 11 Text
+                    html.H6("A later and shallow recovery", style={"padding-bottom": "5px"}),
+                    html.P("While we forecast that the supply and demand for the barrels of oil will likely find a balance \
+                            by the end of 2016, this doesn\'t mean a sharp rebound in prices will occur quickly as many", style={"padding-bottom": "5px"}),
                 ], className = "written-text no-header eight columns"),
             ], className = "subpage"),
             html.A([ 'Print PDF' ],
