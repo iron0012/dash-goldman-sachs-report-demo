@@ -4,10 +4,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 from plotly import graph_objs as go
-from datetime import datetime as dt
-import pandas as pd
-import json
-from pandas_datareader import data as web
 from flask import Flask
 server = Flask('my app')
 
@@ -110,7 +106,7 @@ app.layout = html.Div([
                             html.P("(212) 357-7528 michael.hinds@gs.com"),
                             html.P("Goldman, Sachs & Co"),
                         ], className = "contact five columns")
-                ], className = "firstPage row"),
+                ], className = "firstPage row", style={"margin-top": "20px"}),
             ], className = "subpage"),
 
         ], className = "page"),
