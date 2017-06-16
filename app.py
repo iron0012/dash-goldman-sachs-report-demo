@@ -142,15 +142,18 @@ app.layout = html.Div([
                             className = "gs-header gs-table-header padded"),
                     dcc.Dropdown(
                         id='selected-dropdown',
+                        className="dropdown",
                         options=[
-                            {'label': 'GS Candlestick', 'value': 'PAST'},
-                            {'label': 'GS Growth', 'value': 'PRESENT'},
-                            {'label': 'GS vs MS vs JPM', 'value': 'FUTURE'}
+                            {'label': 'GS', 'value': 'GS'},
+                            {'label': 'Moving Average (50 day)', 'value': 'MovingAverage50'},
+                            {'label': 'Moving Average (200 day)', 'value': 'MovingAverage200'},
+                            {'label': 'Volume', 'value': 'Volume'}
                         ],
-                        value='PRESENT'
+                        multi=True,
+                        value='GS'
                     ),
                     dcc.Graph(id='tester')
-                ], className = "eight columns" ),
+                ], className = "eight columns"),
             ], className = "row "),
 
             # Row 2.5
@@ -250,15 +253,16 @@ app.layout = html.Div([
 
                 html.Div([
                     html.H6('Sector Allocation (%)', className = "gs-header gs-table-header padded"),
-                    dcc.Graph(id="select_viz_graph"),
                     dcc.Dropdown(
                         id='second-dropdown',
+                        className="dropdown",
                         options=[
                             {'label': 'Bar Graph', 'value': 'Graph'},
                             {'label': 'Pie Chart', 'value': 'PieChart'}
                         ],
                         value='Graph'
                     ),
+                    dcc.Graph(id="select_viz_graph", style={"padding-top": "60px"}),
                     html.H6('Country Bond Allocation (%)', className = "gs-header gs-table-header padded"),
                     html.Table( make_dash_table( df_bond_allocation ) ),
 
@@ -441,105 +445,191 @@ def redo_graph(selected_dropdown_value):
     mf = pd.read_csv("JPMorgan.csv")
     cf = pd.read_csv("MS.csv")
     print(selected_dropdown_value)
-    print("HERE")
+    print(len(selected_dropdown_value))
     # Construct a figure and return it to dash's front-end
     # This will end up updating the Graph's `figure` property
     # in the front-end of the application.
-    if(selected_dropdown_value=="PRESENT"):
-        print("MAde the if")
-        return go.Figure(
-            data=[{
-                'x': df['date'][2000:],
-                'y': df['close'][2000:],
-                "line": {
-                    "color": "rgb(140, 15, 7)",
-                    "width": 3
+    traces = []
+    stockTicker = {
+        'x': df['date'],
+        'y': df['close'],
+        "line": {
+            "color": "rgb(140, 15, 7)",
+            "width": 3
+        },
+        "name": "GS",
+        "type": "scatter",
+        "uid": "0fac46",
+        "xsrc": "alishobeiri:661:796f86",
+        "ysrc": "alishobeiri:661:56eff0"
+    }
+    movingAverage50 = {
+        'x': df['date'],
+        'y': df['close'].rolling(50).mean(),
+        "line": {
+            "width": 2,
+            "color": '#b8f441'
+        },
+        "name": "Moving Average"
+    }
+    movingAverage200 = {
+        'x': df['date'],
+        'y': df['close'].rolling(200).mean(),
+        "line": {
+            "width": 2,
+            "color": '#f4c441'
+        },
+        "name": "Moving Average"
+    }
+    volume = {
+        'x': df['date'],
+        'y': df['volume'],
+        'name': 'Moving Average',
+        'line': {
+            "width": 1,
+            'color': '#418cf4'
+        },
+        'yaxis': 'y2'
+        }
+    if "GS" in selected_dropdown_value:
+        traces.append(stockTicker)
+    if "MovingAverage50" in selected_dropdown_value:
+        traces.append(movingAverage50)
+    if "MovingAverage200" in selected_dropdown_value:
+        traces.append(movingAverage200)
+    if "Volume" in selected_dropdown_value and len(selected_dropdown_value) == 1:
+        traces.append({
+                'x': df['date'],
+                'y': df['volume'],
+                'name': 'Moving Average',
+                'line': {
+                    "width": 1,
+                    'color': '#418cf4'
+                }
+                })
+        layout = {
+                'autosize': True,
+                'margin': {"r": 35, "t": 10, "b": 30, "l": 35, "pad": 0},
+                'width': '425',
+                'height': '250',
+                "plot_bgcolor": "rgb(217, 224, 236)",
+                'xaxis': {'gridcolor': 'rgb(255, 255, 255)', "range": ["2008-01-01 00:00:00", "2018-12-31 00:00:00.00"]},
+                'yaxis': {'gridcolor': 'rgb(255, 255, 255)', "rangemode": "nonnegative"},
+                'showlegend': False
+               }
+    elif "Volume" in selected_dropdown_value:
+        traces.append(volume)
+        layout = {
+                'autosize': True,
+                'margin': {"r": 30, "t": 10, "b": 30, "l": 35, "pad": 0},
+                'width': '425',
+                'height': '250',
+                "plot_bgcolor": "rgb(217, 224, 236)",
+                'xaxis': {'gridcolor': 'rgb(255, 255, 255)', "range": ["2008-01-01 00:00:00", "2018-12-31 00:00:00.00"]},
+                'yaxis': {'gridcolor': 'rgb(255, 255, 255)'},
+                "yaxis2": {
+                    "anchor": "x",
+                    "autorange": True,
+                    "overlaying": "y",
+                    "side": "right",
+                    "type": "linear",
+                    'showgrid': False,
+                    'zeroline': False,
+                    'showline': False
                 },
-            }],
-            layout={
-                    'autosize': True,
-                    'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
-                    'width': '425',
-                    'height': '250',
-                    "plot_bgcolor": "rgb(217, 224, 236)",
-                    'xaxis': {'gridcolor': 'rgb(255, 255, 255)'},
-                    'yaxis': {'gridcolor': 'rgb(255, 255, 255)'}
-                   }
-        )
-    elif(selected_dropdown_value=="FUTURE"):
-        return go.Figure(
-            data=[
-                {
-                    'name': "Goldman Sachs",
-                    'x': df['date'][2000:],
-                    'y': df['close'][2000:],
-                    "line": {
-                        "color": "rgb(140, 15, 7)",
-                        "width": 3
-                        },
-                },
-                {
-                    'name': "Morgan Stanley",
-                    'x': mf['date'][2000:],
-                    'y': mf['close'][2000:],
-                    "line": {
-                        "color": "#4286f4",
-                        "width": 3
-                        },
-                },
-                {
-                    'name': "JP Morgan Chase",
-                    'x': cf['date'][2000:],
-                    'y': cf['close'][2000:],
-                    "line": {
-                        "color": "rgb(244, 220, 65)",
-                        "width": 3
-                        },
-                },
-            ],
-            layout={
-                    'autosize': True,
-                    'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
-                    'width': '425',
-                    "legend": {
-                        "x": 0.233000718248,
-                        "y": -0.0950524188455,
-                        "bgcolor": "rgb(255, 255, 255)",
-                        "borderwidth": -1,
-                        "font": {
-                          "family": "Arial",
-                          "size": 10
-                        },
-                        "orientation": "h"
-                    },
-                    'height': '250',
-                    "plot_bgcolor": "rgb(217, 224, 236)",
-                    'xaxis': {'gridcolor': 'rgb(255, 255, 255)', "range": ["2008-01-01", "2017-06-15"],
-                              "type": "date"},
-                    'yaxis': {'gridcolor': 'rgb(255, 255, 255)', "rangemode": "nonnegative"}
-                   }
-        )
+                'showlegend': False
+               }
     else:
-        print("made teh else")
-        trace = go.Candlestick(
-                    x=df['date'][2000:],
-                    high=df['high'][2000:],
-                    open=df['open'][2000:],
-                    close=df['close'][2000:],
-                    low=df['low'][2000:]
-                )
-        data = [trace]
-        layout={
-            'autosize': True,
-            'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
-            'showlegend': False,
-            'width': '425',
-            'height': '250',
-            "plot_bgcolor": "rgb(217, 224, 236)",
-            'xaxis': {'gridcolor': 'rgb(255, 255, 255)', 'fixedrange': True},
-            'yaxis': {'gridcolor': 'rgb(255, 255, 255)', 'fixedrange': True}
-           }
-        return go.Figure(data=data, layout=layout)
+        layout = {
+                'autosize': True,
+                'margin': {"r": 30, "t": 10, "b": 30, "l": 35, "pad": 0},
+                'width': '425',
+                'height': '250',
+                "plot_bgcolor": "rgb(217, 224, 236)",
+                'xaxis': {'gridcolor': 'rgb(255, 255, 255)', "range": ["2008-01-01 00:00:00", "2018-12-31 00:00:00.00"]},
+                'yaxis': {'gridcolor': 'rgb(255, 255, 255)'},
+                'showlegend': False
+               }
+    data = go.Data(traces)
+
+    return go.Figure(data=data, layout=layout)
+    #
+    # if(selected_dropdown_value=="PRESENT"):
+
+    # elif(selected_dropdown_value=="FUTURE"):
+    #     return go.Figure(
+    #         data=[
+    #             {
+    #                 'name': "Goldman Sachs",
+    #                 'x': df['date'],
+    #                 'y': df['close'],
+    #                 "line": {
+    #                     "color": "rgb(140, 15, 7)",
+    #                     "width": 3
+    #                     },
+    #             },
+    #             {
+    #                 'name': "Morgan Stanley",
+    #                 'x': mf['date'],
+    #                 'y': mf['close'],
+    #                 "line": {
+    #                     "color": "#4286f4",
+    #                     "width": 3
+    #                     },
+    #             },
+    #             {
+    #                 'name': "JP Morgan Chase",
+    #                 'x': cf['date'],
+    #                 'y': cf['close'],
+    #                 "line": {
+    #                     "color": "rgb(244, 220, 65)",
+    #                     "width": 3
+    #                     },
+    #             },
+    #         ],
+    #         layout={
+    #                 'autosize': True,
+    #                 'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
+    #                 'width': '425',
+    #                 "legend": {
+    #                     "x": 0.233000718248,
+    #                     "y": -0.0950524188455,
+    #                     "bgcolor": "rgb(255, 255, 255)",
+    #                     "borderwidth": -1,
+    #                     "font": {
+    #                       "family": "Arial",
+    #                       "size": 10
+    #                     },
+    #                     "orientation": "h"
+    #                 },
+    #                 'height': '250',
+    #                 "plot_bgcolor": "rgb(217, 224, 236)",
+    #                 'xaxis': {'gridcolor': 'rgb(255, 255, 255)', "range": ["2008-01-01 00:00:00", "2018-12-31 00:00:00.00"],
+    #                           "type": "date"},
+    #                 'yaxis': {'gridcolor': 'rgb(255, 255, 255)', "rangemode": "nonnegative"}
+    #                }
+    #     )
+    # else:
+    #     print("made teh else")
+    #     trace = go.Candlestick(
+    #                 x=df['date'][2000:],
+    #                 high=df['high'][2000:],
+    #                 open=df['open'][2000:],
+    #                 close=df['close'][2000:],
+    #                 low=df['low'][2000:]
+    #             )
+    #     data = [trace]
+    #     layout={
+    #         'autosize': True,
+    #         'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
+    #         'showlegend': False,
+    #         'width': '425',
+    #         'height': '250',
+    #         "plot_bgcolor": "rgb(217, 224, 236)",
+    #         'xaxis': {'gridcolor': 'rgb(255, 255, 255)', 'fixedrange': True},
+    #         'yaxis': {'gridcolor': 'rgb(255, 255, 255)', 'fixedrange': True}
+    #        }
+    #     return go.Figure(data=data, layout=layout)
 
 # "https://plot.ly/~jackp/17553.embed?modebar=false&link=false&autosize=true", \
 #                            seamless="seamless", style=dict(border=0), width="100%", height="250")
@@ -550,7 +640,7 @@ def redo_graph(selected_dropdown_value):
 external_css = [ "https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css",
         "https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
         "//fonts.googleapis.com/css?family=Raleway:400,300,600",
-        "https://codepen.io/plotly/pen/KmyPZr.css",
+        "https://codepen.io/alishobeiri/pen/XgpXaq.css",
         "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"]
 
 for css in external_css:
