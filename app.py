@@ -9,10 +9,8 @@ import dash_core_components as dcc
 import dash_html_components as html
 
 from plotly import graph_objs as go
-from datetime import datetime as dt
 import pandas as pd
-import json
-import pandas_datareader.data as web
+from flask import Flask
 
 
 # In[2]:
@@ -82,8 +80,10 @@ dash.__version__
 
 
 # In[178]:
+server = Flask('my app')
+server.secret_key = 'secret'
 
-app = dash.Dash('GS Bond II Portfolio')
+app = dash.Dash('GS Bond II Portfolio', server=server)
 
 # Describe the layout, or the UI, of the app
 app.layout = html.Div([
