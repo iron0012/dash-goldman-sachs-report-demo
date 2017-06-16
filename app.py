@@ -12,7 +12,7 @@ from plotly import graph_objs as go
 from datetime import datetime as dt
 import pandas as pd
 import json
-from pandas_datareader import data as web
+import pandas_datareader.data as web
 
 
 # In[2]:
@@ -136,22 +136,21 @@ app.layout = html.Div([
                             than GS Strategic Absolute Return Bond I Portfolio.', className = 'blue-text' ),
 
                 ], className = "four columns" ),
-##################################################################################################
+
                 html.Div([
                     html.H6(["Performance (Indexed)"],
                             className = "gs-header gs-table-header padded"),
                     dcc.Dropdown(
                         id='selected-dropdown',
                         options=[
-                            {'label': 'Last Quarter', 'value': 'PAST'},  #################################
-                            {'label': 'Current', 'value': 'PRESENT'},   ##################################
-                            {'label': 'Projection', 'value': 'FUTURE'}  #################################
+                            {'label': 'GS Candlestick', 'value': 'PAST'},
+                            {'label': 'GS Growth', 'value': 'PRESENT'},
+                            {'label': 'GS vs MS vs JPM', 'value': 'FUTURE'}
                         ],
                         value='PRESENT'
                     ),
                     dcc.Graph(id='tester')
                 ], className = "eight columns" ),
-######################################################################################
             ], className = "row "),
 
             # Row 2.5
@@ -251,9 +250,15 @@ app.layout = html.Div([
 
                 html.Div([
                     html.H6('Sector Allocation (%)', className = "gs-header gs-table-header padded"),
-                    html.Iframe(src="https://plot.ly/~jackp/17560.embed?modebar=false&link=false&autosize=true", \
-                        seamless="seamless", style=dict(border=0), width="100%", height="300"),
-
+                    dcc.Graph(id="select_viz_graph"),
+                    dcc.Dropdown(
+                        id='second-dropdown',
+                        options=[
+                            {'label': 'Bar Graph', 'value': 'Graph'},
+                            {'label': 'Pie Chart', 'value': 'PieChart'}
+                        ],
+                        value='Graph'
+                    ),
                     html.H6('Country Bond Allocation (%)', className = "gs-header gs-table-header padded"),
                     html.Table( make_dash_table( df_bond_allocation ) ),
 
@@ -281,51 +286,261 @@ app.layout = html.Div([
 ])
 
 
+@app.callback(Output('select_viz_graph', 'figure'),
+              [Input('second-dropdown', 'value')])
+def select_viz_graph(value):
+    if(value=="PieChart"):
+        print("WE HERE")
+        trace1 = {
+          "labels": ["Governments", "Asset-Back Securities (ABS)", "Residential Mortgages (RMBS)", "Emerging Market Debt", "Corporates - High Yield", "Municipal", "Commercial Mortgages (CMBS)", "Corporates - Inv. Grade", "Covered Bonds", "Quasi-Governments", "Derivatives", "N/A"],
+          "labelssrc": "alishobeiri:661:71ae57",
+          "name": "B",
+          "type": "pie",
+          "uid": "353874",
+          "values": ["46.5", "18.7", "10.6", "4.7", "2.7", "1.4", "1.4", "0.8", "0.4", "0.3", "0.0", "12.5"],
+          "valuessrc": "alishobeiri:661:2b5e75"
+        }
+        data = go.Data([trace1])
+        layout = {
+          "annotations": [
+            {
+              "x": 0.9583,
+              "y": 0.569230769231,
+              "font": {"size": 12},
+              "showarrow": False,
+              "text": "Governments",
+              "xref": "x",
+              "yref": "y"
+            },
+            {
+              "x": 0.1533,
+              "y": 0.8446,
+              "font": {"size": 9},
+              "showarrow": False,
+              "text": "Asset-Backed<br>Securities",
+              "textangle": -11,
+              "xref": "x",
+              "yref": "y"
+            },
+            {
+              "x": 0.07,
+              "y": 0.5475,
+              "font": {"size": 10},
+              "showarrow": False,
+              "text": "N/A",
+              "xref": "x",
+              "yref": "y"
+            },
+            {
+              "x": 0.18,
+              "y": 0.39,
+              "showarrow": False,
+              "text": "Residential <br>Mortages",
+              "textangle": -35,
+              "xref": "x",
+              "yref": "y"
+            },
+            {
+              "x": 0.4167,
+              "y": 0.195,
+              "font": {"size": 8},
+              "showarrow": False,
+              "text": "Emerging Mkt Debt",
+              "textangle": -68,
+              "xref": "x",
+              "yref": "y"
+            }
+          ],
+          "autosize": True,
+          "bargroupgap": 0.2,
+          "font": {
+            "family": "Raleway",
+            "size": 9
+          },
+          "height": 300,
+          "hiddenlabels": ["Derivatives"],
+          "hovermode": "closest",
+          "legend": {
+            "x": 2.46333333333,
+            "y": 0.810153846154,
+            "bgcolor": "rgba(255, 255, 255, 0)",
+            "font": {"color": "rgb(68, 68, 68)"},
+            "orientation": "v",
+            "xanchor": "left"
+          },
+          "margin": {
+            "r": 0,
+            "t": 0,
+            "b": 40,
+            "l": 0,
+            "pad": 6
+          },
+          "showlegend": False,
+          "titlefont": {
+            "family": "Raleway",
+            "size": 9
+          },
+          "width": 200
+        }
+        return go.Figure(data=data, layout=layout)
+    else:
+        trace1 = {
+          "x": ["Governments", "Asset-Back Securities (ABS)", "Residential Mortgages (RMBS)", "Emerging Market Debt", "Corporates - High Yield", "Municipal", "Commercial Mortgages (CMBS)", "Corporates - Inv. Grade", "Covered Bonds", "Quasi-Governments", "Derivatives", "N/A"],
+          "y": ["46.5", "18.7", "10.6", "4.7", "2.7", "1.4", "1.4", "0.8", "0.4", "0.3", "0.0", "12.5"],
+          "marker": {"color": "rgb(101, 32, 31)"},
+          "name": "B",
+          "type": "bar",
+          "uid": "353874"
+        }
+        data = go.Data([trace1])
+        layout = {
+          "autosize": False,
+          "bargroupgap": 0.2,
+          "font": {
+            "family": "Raleway",
+            "size": 9
+          },
+          "height": 300,
+          "hovermode": "closest",
+          "margin": {
+            "r": 10,
+            "t": 0,
+            "b": 140,
+            "l": 20,
+            "pad": 0
+          },
+          "titlefont": {
+            "family": "Raleway",
+            "size": 9
+          },
+          "width": 300,
+          "xaxis": {
+            "autorange": True,
+            "range": [-0.5, 11.5],
+            "title": "",
+            "type": "category"
+          },
+          "yaxis": {
+            "autorange": True,
+            "range": [0, 48.9473684211],
+            "title": "",
+            "type": "linear"
+          },
+          "width": 200
+        }
+        return go.Figure(data=data, layout=layout)
+
+
+
 @app.callback(
     Output('tester', 'figure'),
     [Input('selected-dropdown', 'value')])
 def redo_graph(selected_dropdown_value):
     # Get some new data from Yahoo finance with Pandas
-
-    dateFirst = {
-        'PAST': dt(2015, 1, 1),
-        'PRESENT': dt(2016, 1, 1),
-        'FUTURE': dt(2017, 1, 1)
-    }[selected_dropdown_value]
-
-    dateSecond = {
-        'PAST': dt(2015, 12, 31),
-        'PRESENT': dt(2016, 12, 31),
-        'FUTURE': dt.now()
-    }[selected_dropdown_value]
-
-
-    df = web.DataReader(
-        'GS', 'yahoo',
-        dateFirst, dateSecond
-    )
-
+    df = pd.read_csv("GS.csv")
+    mf = pd.read_csv("JPMorgan.csv")
+    cf = pd.read_csv("MS.csv")
+    print(selected_dropdown_value)
+    print("HERE")
     # Construct a figure and return it to dash's front-end
     # This will end up updating the Graph's `figure` property
     # in the front-end of the application.
-    return go.Figure(
-        data=[{
-            'x': df.index,
-            'y': df.Close,
-            "line": {
-                "color": "rgb(140, 15, 7)",
-                "width": 3
-            },
-        }],
-        layout={'autosize': True,
-                'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
-                'width': '425',
-                'height': '250',
-                "plot_bgcolor": "rgb(217, 224, 236)",
-                'xaxis': {'gridcolor': 'rgb(255, 255, 255)'},
-                'yaxis': {'gridcolor': 'rgb(255, 255, 255)'}
-               }
-    )
+    if(selected_dropdown_value=="PRESENT"):
+        print("MAde the if")
+        return go.Figure(
+            data=[{
+                'x': df['date'][2000:],
+                'y': df['close'][2000:],
+                "line": {
+                    "color": "rgb(140, 15, 7)",
+                    "width": 3
+                },
+            }],
+            layout={
+                    'autosize': True,
+                    'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
+                    'width': '425',
+                    'height': '250',
+                    "plot_bgcolor": "rgb(217, 224, 236)",
+                    'xaxis': {'gridcolor': 'rgb(255, 255, 255)'},
+                    'yaxis': {'gridcolor': 'rgb(255, 255, 255)'}
+                   }
+        )
+    elif(selected_dropdown_value=="FUTURE"):
+        return go.Figure(
+            data=[
+                {
+                    'name': "Goldman Sachs",
+                    'x': df['date'][2000:],
+                    'y': df['close'][2000:],
+                    "line": {
+                        "color": "rgb(140, 15, 7)",
+                        "width": 3
+                        },
+                },
+                {
+                    'name': "Morgan Stanley",
+                    'x': mf['date'][2000:],
+                    'y': mf['close'][2000:],
+                    "line": {
+                        "color": "#4286f4",
+                        "width": 3
+                        },
+                },
+                {
+                    'name': "JP Morgan Chase",
+                    'x': cf['date'][2000:],
+                    'y': cf['close'][2000:],
+                    "line": {
+                        "color": "rgb(244, 220, 65)",
+                        "width": 3
+                        },
+                },
+            ],
+            layout={
+                    'autosize': True,
+                    'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
+                    'width': '425',
+                    "legend": {
+                        "x": 0.233000718248,
+                        "y": -0.0950524188455,
+                        "bgcolor": "rgb(255, 255, 255)",
+                        "borderwidth": -1,
+                        "font": {
+                          "family": "Arial",
+                          "size": 10
+                        },
+                        "orientation": "h"
+                    },
+                    'height': '250',
+                    "plot_bgcolor": "rgb(217, 224, 236)",
+                    'xaxis': {'gridcolor': 'rgb(255, 255, 255)', "range": ["2008-01-01", "2017-06-15"],
+                              "type": "date"},
+                    'yaxis': {'gridcolor': 'rgb(255, 255, 255)', "rangemode": "nonnegative"}
+                   }
+        )
+    else:
+        print("made teh else")
+        trace = go.Candlestick(
+                    x=df['date'][2000:],
+                    high=df['high'][2000:],
+                    open=df['open'][2000:],
+                    close=df['close'][2000:],
+                    low=df['low'][2000:]
+                )
+        data = [trace]
+        layout={
+            'autosize': True,
+            'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
+            'showlegend': False,
+            'width': '425',
+            'height': '250',
+            "plot_bgcolor": "rgb(217, 224, 236)",
+            'xaxis': {'gridcolor': 'rgb(255, 255, 255)', 'fixedrange': True},
+            'yaxis': {'gridcolor': 'rgb(255, 255, 255)', 'fixedrange': True}
+           }
+        return go.Figure(data=data, layout=layout)
+
 # "https://plot.ly/~jackp/17553.embed?modebar=false&link=false&autosize=true", \
 #                            seamless="seamless", style=dict(border=0), width="100%", height="250")
 
@@ -349,8 +564,8 @@ for js in external_js:
 
 
 # In[ ]:
-
-app.server.run()
+if __name__ == "__main__":
+    app.server.run(debug=True)
 
 
 # In[ ]:
