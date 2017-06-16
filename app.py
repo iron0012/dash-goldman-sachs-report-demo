@@ -262,7 +262,7 @@ app.layout = html.Div([
                         ],
                         value='Graph'
                     ),
-                    dcc.Graph(id="select_viz_graph", style={"padding-top": "60px"}),
+                    dcc.Graph(id="select_viz_graph"),
                     html.H6('Country Bond Allocation (%)', className = "gs-header gs-table-header padded"),
                     html.Table( make_dash_table( df_bond_allocation ) ),
 
@@ -455,40 +455,38 @@ def redo_graph(selected_dropdown_value):
         'y': df['close'],
         "line": {
             "color": "rgb(140, 15, 7)",
-            "width": 3
+            "width": 2
         },
         "name": "GS",
-        "type": "scatter",
-        "uid": "0fac46",
-        "xsrc": "alishobeiri:661:796f86",
-        "ysrc": "alishobeiri:661:56eff0"
+        "type": "scatter"
     }
     movingAverage50 = {
         'x': df['date'],
         'y': df['close'].rolling(50).mean(),
         "line": {
-            "width": 2,
-            "color": '#b8f441'
+            "width": 1,
+            "color": '#ffee00'
         },
-        "name": "Moving Average"
+        "name": "Moving Average 50 day"
     }
     movingAverage200 = {
         'x': df['date'],
         'y': df['close'].rolling(200).mean(),
         "line": {
-            "width": 2,
-            "color": '#f4c441'
+            "width": 1,
+            "color": '#255C99'
         },
-        "name": "Moving Average"
+        "name": "Moving Average 200 day"
     }
     volume = {
         'x': df['date'],
         'y': df['volume'],
-        'name': 'Moving Average',
-        'line': {
-            "width": 1,
-            'color': '#418cf4'
+        'name': 'Volume',
+        'type': 'bar',
+        'marker': {
+            'color': '#999999',
         },
+        'opacity': 0.3,
         'yaxis': 'y2'
         }
     if "GS" in selected_dropdown_value:
@@ -501,15 +499,15 @@ def redo_graph(selected_dropdown_value):
         traces.append({
                 'x': df['date'],
                 'y': df['volume'],
-                'name': 'Moving Average',
+                'name': 'Volume',
                 'line': {
                     "width": 1,
-                    'color': '#418cf4'
+                    'color': '#3333FF'
                 }
                 })
         layout = {
                 'autosize': True,
-                'margin': {"r": 35, "t": 10, "b": 30, "l": 35, "pad": 0},
+                'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
                 'width': '425',
                 'height': '250',
                 "plot_bgcolor": "rgb(217, 224, 236)",
@@ -521,7 +519,7 @@ def redo_graph(selected_dropdown_value):
         traces.append(volume)
         layout = {
                 'autosize': True,
-                'margin': {"r": 30, "t": 10, "b": 30, "l": 35, "pad": 0},
+                'margin': {"r": 32, "t": 10, "b": 30, "l": 45, "pad": 0},
                 'width': '425',
                 'height': '250',
                 "plot_bgcolor": "rgb(217, 224, 236)",
@@ -542,7 +540,7 @@ def redo_graph(selected_dropdown_value):
     else:
         layout = {
                 'autosize': True,
-                'margin': {"r": 30, "t": 10, "b": 30, "l": 35, "pad": 0},
+                'margin': {"r": 0, "t": 10, "b": 30, "l": 35, "pad": 0},
                 'width': '425',
                 'height': '250',
                 "plot_bgcolor": "rgb(217, 224, 236)",
