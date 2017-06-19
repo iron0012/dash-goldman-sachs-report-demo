@@ -7,7 +7,7 @@ from plotly import graph_objs as go
 from flask import Flask
 server = Flask('my app')
 
-app = dash.Dash('The New Oil Order', server=server)
+app = dash.Dash('The New Oil Order', server=server, base_url_prefix='/dash/gallery/goldman-sachs-report/', csrf_protect=False)
 
 app.layout = html.Div([
 
