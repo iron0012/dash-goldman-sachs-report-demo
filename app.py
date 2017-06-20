@@ -775,7 +775,7 @@ app.layout = html.Div([
 
 external_css = ["https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
                 "//fonts.googleapis.com/css?family=Raleway:400,300,600",
-                "https://codepen.io/alishobeiri/pen/wdXNjV.css?v=plotly",
+                "https://cdn.rawgit.com/plotly/dash-app-stylesheets/master/goldman-sachs-report.css",
                 "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"]
 
 for css in external_css:
