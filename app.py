@@ -11,7 +11,7 @@ app = dash.Dash('The New Oil Order', server=server, url_base_pathname='/dash/gal
 
 app.layout = html.Div([
 
-        # Page 1
+        # Page 1g
         html.Div([
             html.A(['Print PDF'],
                    className="button no-print",
@@ -777,6 +777,10 @@ external_css = ["https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.
                 "//fonts.googleapis.com/css?family=Raleway:400,300,600",
                 "https://cdn.rawgit.com/plotly/dash-app-stylesheets/master/goldman-sachs-report.css",
                 "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"]
+if 'DYNO' in os.environ:
+    app.scripts.append_script({
+        'external_url': 'https://cdn.rawgit.com/chriddyp/ca0d8f02a1659981a0ea7f013a378bbd/raw/e79f3f789517deec58f41251f7dbb6bee72c44ab/plotly_ga.js'
+    })
 
 for css in external_css:
     app.css.append_css({"external_url": css})
