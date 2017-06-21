@@ -10,6 +10,6 @@ The following are screenshots for the app in this repo:
 
 <center>![Alt desc](https://cdn.rawgit.com/plotly/dash-goldman-sachs-report-demo/master/Screenshots/Screenshot.png?token=ARkbw4I1jw-iEjlqd9A5eT_tOFwTXjhiks5ZU7EuwA%3D%3D)</center>
 
-<p align="right">
+<img align="right">
 ![alt](https://cdn.rawgit.com/plotly/dash-goldman-sachs-report-demo/master/Screenshots/Screenshot.png?token=ARkbw4I1jw-iEjlqd9A5eT_tOFwTXjhiks5ZU7EuwA%3D%3D)
-</p>
+</img>
