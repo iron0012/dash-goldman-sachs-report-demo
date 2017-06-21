@@ -298,4 +298,3 @@ for js in external_js:
 # In[ ]:
 if __name__ == '__main__':
 	app.server.run()
-
