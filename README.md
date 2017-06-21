@@ -8,4 +8,4 @@ To learn more check out our [documentation](https://plot.ly/dash).
 
 The following are screenshots for the app in this repo:
 
-<img src=https://cdn.rawgit.com/plotly/dash-goldman-sachs-report-demo/master/Screenshots/Screenshot.png?token=ARkbw4I1jw-iEjlqd9A5eT_tOFwTXjhiks5ZU7EuwA%3D%3D style="max-width:100%;margin: 0 100px;">
+<img src=https://cdn.rawgit.com/plotly/dash-goldman-sachs-report-demo/master/Screenshots/Screenshot.png?token=ARkbw4I1jw-iEjlqd9A5eT_tOFwTXjhiks5ZU7EuwA%3D%3D style="max-width:100%;margin: 0 100px;"/>
